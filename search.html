@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>search in javascript</title>
+<title>eGrocerry store</title>
+    <!-----font kit---------------------->
+    <script src="https://kit.fontawesome.com/303732ee6a.js" crossorigin="anonymous"></script>
+    <!-----font-style import---------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@200;500&family=Oswald:wght@200;300&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<style type="text/css">
+    *{
+    margin: 0; 
+     padding: 0;
+    font-family: poppins;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+    body
+    {
+    background-color: rgb(235, 191, 191);
+    }
+    .container-fluid
+    {
+    width: 100%;
+    height: auto;
+    padding: 0px 0px 80px 0px;
+    }
+    .container
+    {
+    width: 1200px;
+    height: auto;
+    margin: auto;
+    }
+    .container .search{
+    display: flex;
+    padding: 30px 0px;
+    justify-content: space-between;
+    }
+    .container .search p{
+        font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color:#202020;
+    }
+    .container .search span{
+        color: #40aa54;
+    }
+    
+    .container .search input
+    {
+    width: 60%;
+    padding: 5px 16px;
+    background: transparent;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    background-color: white;
+    }
+    .container .search input::placeholder
+    {
+    color: rgb(13, 15, 13);
+    font-weight: 500;
+    font-size: 1rem;
+    }
+    
+
+
+
+    .product-list {
+        
+        display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+    margin: 40px 0px;
+    
+}
+    .product{
+    padding: 15px;
+    background-color: #2e0505;
+    border-radius: 15px;
+    }
+    
+    .product-list .product img{
+        width: 90%;
+    height: 180px;
+    object-fit: contain;
+    object-position: center;
+    transition: all ease 1s;
+    }
+    .product-list .product h3{
+        color: #dfb3b3;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    }
+    .product .quantity{
+    font-size: 0.8rem;
+    color: #dfb3b3;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-top: 5px;
+}
+.product .rate{
+    color: #c29f9f;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.product .cart_btn{
+    width: 100%;
+    height: 40px;
+    background-color: #c3d8c7;
+    color: #032009;
+    display: flex;
+    justify-content: center;
+    align-items: center;margin-top: 20px;
+    border-radius: 5px;
+    transition: all ease 1s;
+
+
+}
+.product .cart_btn:hover{
+    background-color: #4eb060;
+    transition: all ease 1s;
+}
+.product .cart_btn i{
+    margin-right: 10px;
+
+
+}
+.product .cart_btn span{
+    transition: all ease 1s;
+
+}
+.product .cart_btn span:hover{
+    color: white;
+    transition: all ease 1s;
+}
+a{
+    text-decoration: none;
+}
+
+    </style>
+
+
+</head>
+<body>
+<div class="container-fluid">
+                <div class="container">
+                    <div class="search">
+                            <p><span>e</span>Grocerry</p>
+                        <input type="text" name="" id="find" placeholder="search here...." onkeyup="search()">
+                    </div>
+            <div class="product-list">
+                <div class="product">
+                    <img src="images/apple.png">
+                            <h3>Apple</h3>
+                            <p class="quantity">1 KG</p>
+                            <p class="rate">Rs.75</p>
+                            <a href="cart.html" target="_blank" class="cart_btn">
+                                <i class="fa-solid fa-cart-shopping"></i> <span>Add to Cart</span>
+                            </a>
+                </div>
+                <div class="product">
+                    <img src="images/chili.png">
+                            <h3>Chilli</h3>
+                            <p class="quantity">1 KG</p>
+                            <p class="rate">Rs.85</p>
+                            <a href="cart.html" target="_blank" class="cart_btn">
+                                <i class="fa-solid fa-cart-shopping"></i> <span>Add to Cart</span>
+                            </a>
+                </div>
+                <div class="product">
+                    <img src="images/onion.png">
+                            <h3>Onion</h3>
+                            <p class="quantity">1 KG</p>
+                            <p class="rate">Rs.95</p>
+                            <a href="cart.html" target="_blank" class="cart_btn">
+                                <i class="fa-solid fa-cart-shopping"></i> <span>Add to Cart</span>
+                            </a>
+                </div>
+                <div class="product">
+                    <img src="images/patato.png">
+                            <h3>Potato</h3>
+                            <p class="quantity">1 KG</p>
+                            <p class="rate">Rs.100</p>
+                            <a href="cart.html" target="_blank" class="cart_btn">
+                                <i class="fa-solid fa-cart-shopping"></i> <span>Add to Cart</span>
+                            </a>
+                </div>
+                <div class="product">
+                    <img src="images/garlic.png">
+                            <h3>Garlic</h3>
+                            <p class="quantity">1 KG</p>
+                            <p class="rate">Rs.90</p>
+                            <a href="cart.html" target="_blank" class="cart_btn">
+                                <i class="fa-solid fa-cart-shopping"></i> <span>Add to Cart</span>
+                            </a>
+                </div>
+                <div class="product">
+                    <img src="images/tamato.png">
+                            <h3>Tomato</h3>
+                            <p class="quantity">1 KG</p>
+                            <p class="rate">Rs.100</p>
+                            <a href="cart.html" target="_blank" class="cart_btn">
+                                <i class="fa-solid fa-cart-shopping"></i> <span>Add to Cart</span>
+                            </a>
+                </div>
+                <div class="product">
+                    <img src="images/onion.png">
+                            <h3>Onion</h3>
+                            <p class="quantity">1 KG</p>
+                            <p class="rate">Rs.95</p>
+                            <a href="cart.html" target="_blank" class="cart_btn">
+                                <i class="fa-solid fa-cart-shopping"></i> <span>Add to Cart</span>
+                            </a>
+                </div>
+                <div class="product">
+                    <img src="images/chili.png">
+                            <h3>Chilli</h3>
+                            <p class="quantity">1 KG</p>
+                            <p class="rate">Rs.85</p>
+                            <a href="cart.html" target="_blank" class="cart_btn">
+                                <i class="fa-solid fa-cart-shopping"></i> <span>Add to Cart</span>
+                            </a>
+                </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<!-- javascript -->
+<script type="text/javascript">
+function search() {
+let filter = document.getElementById('find').value.toUpperCase();
+let item = document.querySelectorAll('.product');
+let l = document.getElementsByTagName('h3');
+for(var i = 0;i<=l.length;i++){
+let a=item[i].getElementsByTagName('h3')[0];
+let value=a.innerHTML || a.innerText || a.textContent;
+if(value.toUpperCase().indexOf(filter) > -1) {
+item[i].style.display="";
+}
+else
+{
+item[i].style.display="none";
+}
+}
+}
+</script>
+</body>
+</html>
